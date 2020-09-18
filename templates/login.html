@@ -1,0 +1,15 @@
+{% extends 'home.html' %}
+{% block content %}
+<body style="background-color:powderblue;">
+<div style="margin-top:80px;"align="center">
+    <h1>Login</h1>
+    <br><br>
+    <table>
+    <form method="post">
+      {% csrf_token %}
+      {{ form }}
+    <table>
+          <button type="submit" class="btn btn-secondary" style="margin-left: 60px;margin-top:50px;">Submit</button>
+    </form>
+  </div>
+  {% endblock %}

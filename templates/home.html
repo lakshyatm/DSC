@@ -1,0 +1,71 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="{% static 'style.css' %}">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+	<title>Kitty Party</title>
+	</head>
+  <body>
+    {% include 'navbar.html' %}
+    <div class="container-fluid">
+		{% block content %}
+          {% if request.user.is_authenticated %}
+          {% csrf_token %}
+          <h4 style="color:darkblue;">Welcome {{ request.user }}</h4>
+          {% endif %}
+
+    <div class="row bg">
+      <div class="col-md-4 offset-md-4">
+        <form action="" id="form1">
+          <div class="courses_inputs_div">
+            <h4>Create a new Kitty</h4>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Event Name</label>
+              <input type="ski_trip" class="form-control" id="exampleFormControlInput1" placeholder="Ski Trip">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlSelect1">Home Currency</label>
+              <select class="form-control" id="exampleFormControlSelect1">
+                <option>INR RUPEES</option>
+                <option>EUR EURO</option>
+              </select>
+            </div>
+            <br>
+            <h4>Participants</h4>
+            <br>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Person 1</label>
+              <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Your name">
+              <br>
+              <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="Your email (recommended)">
+            </div>
+            <div class="form-group">
+              <label for="exampleFormControlInput1">Person 2</label>
+              <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+            </div>
+
+          </div>
+
+        </form>
+          <button class="btn btn-success add_more_courses" style="margin-top:10px;">+Add new Person</button>
+          <br><br>
+          <button type="submit" class="btn btn-primary">Create Kitty</button>
+      </div> 	 
+    </div>  
+    
+		{% endblock %}
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+</html>
