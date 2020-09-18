@@ -1,0 +1,28 @@
+{% extends 'home.html' %}
+{% block content %}
+
+<div class="row bg">
+    <div class="col-md-4 offset-md-4">
+  
+        <div class="form-group">
+            <label for="exampleFormControlSelect1">You are</label>
+            <select class="form-control" name="sel" id="exampleFormControlSelect1">
+                <option>{{ n1 }}</option>
+                <option>{{ n2 }}</option>
+            </select>
+        </div>
+
+
+<h3>Overview</h3>
+
+This event cost the group: &nbsp;&nbsp;&nbsp;&nbsp; {{ e1 }}
+<br>
+it cost you: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   {{ e2 }}
+<br>
+You've paid: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   {{ e3 }}
+<br>
+You are owed: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {{ e4 }}
+</div>
+</div>
+
+{% endblock %}
