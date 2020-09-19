@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>DSC</title>
+  </head>
+  <body>
+    <div class="row bg">
+      <div class="col-md-4 offset-md-4">
+        <form action="" id="form1">
+          <div class="courses_inputs_div">
+            <h4>Expense</h4>
+            <div class="form-group">
+            <label for="exampleFormControlSelect1">paid for something</label>
+            <select class="form-control" id="exampleFormControlSelect1">
+                <option></option>
+                <option></option>
+            </select>
+
+            </div>
+            <label for="basic-addon1">How much?</label>
+            <div class="input-group mb-3">
+              <div class="input-group-prepend">
+                <span class="input-group-text" id="basic-addon1">INR</span>
+              </div>
+              <input type="number" class="form-control" placeholder="Amount in INR" aria-describedby="basic-addon1">
+            </div>
+            <br>
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" id="exampleRadios1" checked>
+              <label class="form-check-label" for="exampleRadios1">
+                Split equally between everyone
+              </label>
+            </div>
+
+            <div class="form-check">
+              <input class="form-check-input" type="radio" name="exampleRadios" onclick="show(0)">
+              <label class="form-check-label" for="exampleRadios1">
+                Split differently
+              </label>
+            </div>
+            <div id="split">
+
+            </div>
+            <br>
+            <div class="form-group">
+             <label for="exampleFormControlInput1">What for?</label>
+             <input type="name" class="form-control" id="exampleFormControlInput1" placeholder="Name">
+           </div>
+
+
+            <label for="fg">When?</label>
+            <div class='input-group date' id='datetimepicker1'>
+
+                  <input type='date' class="form-control" id="fg"/>
+
+                  <span class="input-group-addon">
+                      <span class="glyphicon glyphicon-calendar"></span>
+                  </span>
+            </div>
+
+
+          </div>
+          <button type="submit" class="btn btn-primary" style="margin-top:10px;">Add</button>
+          <button type="submit" class="btn btn-secondary" id="canel"style="margin-left:15px;margin-top:10px;">Cancel</button>
+
+
+        </form>
+
+      </div>
+
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js" integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
+    <script src="javascript.js"></script>
+  </body>
+</html>
