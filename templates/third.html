@@ -3,7 +3,8 @@
 
 <div class="row bg">
     <div class="col-md-4 offset-md-4">
-  
+        <form action="{% url 'fourth' %}" method="post">
+        {% csrf_token %}
         <div class="form-group">
             <label for="exampleFormControlSelect1">You are</label>
             <select class="form-control" name="sel" id="exampleFormControlSelect1">
@@ -11,17 +12,21 @@
                 <option>{{ n2 }}</option>
             </select>
         </div>
-
-
+        <button type="submit" class="btn btn-primary">Show its Cost</button>
+        </form>
 <h3>Overview</h3>
 
 This event cost the group: &nbsp;&nbsp;&nbsp;&nbsp; {{ e1 }}
 <br>
 it cost you: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   {{ e2 }}
 <br>
-You've paid: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   {{ e3 }}
+You've paid: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;   {{ e3 }}
 <br>
+{% if fi == n1 %}
 You are owed: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {{ e4 }}
+{% else %}
+You owe: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  {{ e4 }}
+{% endif %}
 </div>
 </div>
 
