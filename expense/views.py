@@ -3,7 +3,7 @@ from django.http import HttpResponse, HttpResponseRedirect, JsonResponse, Http40
 from .forms import *
 from django.contrib.auth import authenticate, login, logout
 from django.urls import reverse
-from .models import Kitty,Expense
+from .models import Kitty,Expense,Final
 # Create your views here.
 
 def home(request):
@@ -52,16 +52,37 @@ def third(request):
     n2 = e.person2
     d = Expense.objects.last()
     amt = d.amount
-    if d.paid_person == n1:
+
+    
+    # data = Final(paid_per=paid)
+    # data.save()
+
+    fi = d.paid_person
+
+    if fi == n1:
         e2 = amt/2
         e3 = amt
         e4 = amt/2
-    else:
-        e2 = amt/2
-        e3 = 0
-        e4 = amt/2
+    
 
-    return render(request,'third.html',{'n1':n1,'n2':n2,'e1':amt,'e2':e2,'e3':e3,'e4':e4})
+    return render(request,'third.html',{'fi':fi,'n1':n1,'n2':n2,'e1':amt,'e2':e2,'e3':e3,'e4':e4})
+
+def fourth(request):
+    e = Kitty.objects.last()
+    n1 = e.person1
+    n2 = e.person2
+    d = Expense.objects.last()
+    amt = d.amount
+
+    print("hello")
+    
+    e2 = amt/2
+    e3 = 0
+    e4 = amt/2
+
+    return render(request,'third.html',{'n1':n2,'n2':n1,'e1':amt,'e2':e2,'e3':e3,'e4':e4})
+
+
 
 def user_login(request):
     if request.method == 'POST':
